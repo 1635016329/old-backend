@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsq.backend.mapper.TrainMapper">
+
+    <resultMap id="BaseResultMap" type="com.gsq.backend.model.entity.Train">
+            <id property="trainId" column="train_id" jdbcType="BIGINT"/>
+            <result property="trainName" column="train_name" jdbcType="VARCHAR"/>
+            <result property="trainIntroduction" column="train_introduction" jdbcType="VARCHAR"/>
+            <result property="docUrl" column="doc_url" jdbcType="VARCHAR"/>
+            <result property="trainDuration" column="train_duration" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        train_id,train_name,train_introduction,
+        doc_url,train_duration
+    </sql>
+</mapper>

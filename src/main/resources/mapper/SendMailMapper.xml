@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsq.backend.mapper.SendMailMapper">
+
+    <resultMap id="BaseResultMap" type="com.gsq.backend.model.entity.SendMail">
+            <id property="sendMailId" column="send_mail_id" jdbcType="BIGINT"/>
+            <result property="receiver" column="receiver" jdbcType="VARCHAR"/>
+            <result property="subject" column="subject" jdbcType="VARCHAR"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="sendTime" column="send_time" jdbcType="TIMESTAMP"/>
+            <result property="filename" column="filename" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        send_mail_id,receiver,subject,
+        content,send_time,filename
+    </sql>
+</mapper>

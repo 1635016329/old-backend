@@ -1,0 +1,60 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Shanghai
+    username: root
+    password: gsq
+    #邮箱基本配置
+  mail:
+    #配置smtp服务主机地址
+    # qq邮箱为smtp.qq.com          端口号465或587
+    # sina    smtp.sina.cn
+    # aliyun  smtp.aliyun.com
+    # 163     smtp.163.com       端口号465或994
+    host: smtp.qq.com
+    #发送者邮箱
+    username: 914135534@qq.com
+    #配置密码,注意不是真正的密码，而是刚刚申请到的授权码
+    password: augkbpisavscbcjb
+    #端口号465或587
+    port: 587
+    #默认的邮件编码为UTF-8
+    default-encoding: UTF-8
+    #其他参数
+    properties:
+      mail:
+        #配置SSL 加密工厂
+        smtp:
+          ssl:
+            #本地测试，先放开ssl
+            enable: false
+            required: false
+          #开启debug模式，这样邮件发送过程的日志会在控制台打印出来，方便排查错误
+        debug: true
+swagger:
+  enable: true
+server:
+  address: 0.0.0.0
+  port: 8080
+  servlet:
+    context-path: /api
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# file upload and download configuration
+file:
+  download-path: D:\\myFile\\download\\
+  pdf-path: D:\\myFile\\pdf\\
+  upload-path: D:\\myFile\\temp\\ # 上传到临时文件夹路径
+  mail-file-path: D:\\myFile\\mailFile\\ # 上传到邮件附件路径
+  file-type-array: .png,.jpg,.jpeg,.txt,.zip,.rar,.pdf,.xml,xls
+  max-file-size: 8192
+  base-url: http://localhost:8080/device/pdf/

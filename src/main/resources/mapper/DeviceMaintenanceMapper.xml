@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsq.backend.mapper.DeviceMaintenanceMapper">
+
+    <resultMap id="BaseResultMap" type="com.gsq.backend.model.entity.DeviceMaintenance">
+            <id property="deviceMaintenanceId" column="device_maintenance_id" jdbcType="BIGINT"/>
+            <result property="deviceId" column="device_id" jdbcType="BIGINT"/>
+            <result property="maintenanceStaff" column="maintenance_staff" jdbcType="VARCHAR"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="startTime" column="start_time" jdbcType="TIMESTAMP"/>
+            <result property="expectedEndTime" column="expected_end_time" jdbcType="TIMESTAMP"/>
+            <result property="actualEndTime" column="actual_end_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        device_maintenance_id,device_id,maintenance_staff,
+        content,remark,start_time,
+        expected_end_time,actual_end_time
+    </sql>
+</mapper>
