@@ -156,7 +156,7 @@ public class SystemManageController {
         }
         UpdateWrapper<User> userUpdateWrapper = new UpdateWrapper<>();
         userUpdateWrapper.eq("user_id", userId)
-                .set("real_name", user.getRealName())
+                .set("real_name", user.getUsername())
                 .set("email", user.getEmail())
                 .set("user_role", user.getUserRole())
                 .set("user_password", user.getUserPassword())

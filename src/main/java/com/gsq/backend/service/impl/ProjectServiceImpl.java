@@ -208,7 +208,7 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project>
             User user = userMapper.selectById(projectUser.getUserId());
             ProjectUserVO projectUserVO = new ProjectUserVO();
             projectUserVO.setUserId(user.getUserId());
-            projectUserVO.setRealName(user.getRealName());
+            projectUserVO.setRealName(user.getUsername());
             projectUserVO.setEmail(user.getEmail());
             projectUserVO.setOrg(user.getOrg());
             projectUserVO.setJob(ProjectUserJobEnum.getEnumByValue(projectUser.getUserJob()).getText());

@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.util.Date;
 
 import com.gsq.backend.constant.UserConstant;
 import com.gsq.backend.model.dto.user.UserFile;
@@ -24,9 +25,9 @@ public class User implements Serializable {
     private Long userId;
 
     /**
-     * 真实姓名
+     * 用户名
      */
-    private String realName;
+    private String username;
 
     /**
      * 密码
@@ -48,9 +49,20 @@ public class User implements Serializable {
      */
     private String org;
 
+    /**
+     *
+     */
+    private Date createTime;
+
+    /**
+     *
+     */
+    private Date updateTime;
+
+
     public static User parseUser(UserFile userFile) {
         User user = new User();
-        user.setRealName(userFile.getRealName());
+        user.setUsername(userFile.getRealName());
         user.setUserPassword(UserConstant.USER_INIT_PWD);
         user.setEmail(userFile.getEmail());
         user.setOrg(userFile.getOrg());
@@ -73,7 +85,7 @@ public class User implements Serializable {
         }
         User other = (User) that;
         return (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
-            && (this.getRealName() == null ? other.getRealName() == null : this.getRealName().equals(other.getRealName()))
+            && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
             && (this.getUserPassword() == null ? other.getUserPassword() == null : this.getUserPassword().equals(other.getUserPassword()))
             && (this.getUserRole() == null ? other.getUserRole() == null : this.getUserRole().equals(other.getUserRole()))
             && (this.getEmail() == null ? other.getEmail() == null : this.getEmail().equals(other.getEmail()))
@@ -85,7 +97,7 @@ public class User implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
-        result = prime * result + ((getRealName() == null) ? 0 : getRealName().hashCode());
+        result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
         result = prime * result + ((getUserPassword() == null) ? 0 : getUserPassword().hashCode());
         result = prime * result + ((getUserRole() == null) ? 0 : getUserRole().hashCode());
         result = prime * result + ((getEmail() == null) ? 0 : getEmail().hashCode());
@@ -100,7 +112,7 @@ public class User implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", userId=").append(userId);
-        sb.append(", realName=").append(realName);
+        sb.append(", username=").append(username);
         sb.append(", userpassword=").append(userPassword);
         sb.append(", userRole=").append(userRole);
         sb.append(", email=").append(email);

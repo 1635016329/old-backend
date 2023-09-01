@@ -19,6 +19,7 @@ import javax.servlet.http.HttpSession;
 public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        System.out.println("拦截器启动");
         HttpSession session = request.getSession();
         UserVO user = (UserVO) session.getAttribute(UserConstant.USER_LOGIN_STATE);
         if (user == null) {

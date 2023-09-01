@@ -99,7 +99,7 @@ public class UserController {
         UserVO userLogin = (UserVO) session.getAttribute(USER_LOGIN_STATE);
         User user = new User();
         user.setUserId(userLogin.getUserId());
-        user.setRealName(userVO.getRealName());
+        user.setUsername(userVO.getRealName());
         user.setEmail(userVO.getEmail());
         user.setOrg(userVO.getOrg());
 

@@ -49,7 +49,7 @@ public class UserVO implements Serializable {
                 .map(u -> {
                     UserVO userVO = new UserVO();
                     userVO.setUserId(u.getUserId());
-                    userVO.setRealName(u.getRealName());
+                    userVO.setRealName(u.getUsername());
                     userVO.setUserRole(u.getUserRole());
                     userVO.setEmail(u.getEmail());
                     userVO.setOrg(u.getOrg());
